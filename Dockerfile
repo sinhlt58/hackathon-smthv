@@ -16,4 +16,4 @@ ADD . .
 RUN pip install -r requirements.txt
 
 # Define our command to be run when launching the container
-CMD gunicorn --worker-class eventlet run:app --bind 0.0.0.0:5000 --reload
+CMD gunicorn --worker-class eventlet -w 1 run:app --bind 0.0.0.0:5000 --reload
