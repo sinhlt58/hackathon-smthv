@@ -3,8 +3,6 @@
     <head>
         <meta charset="utf-8">
         <title>SMTHV</title>
-        <base href="/">
-
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     </head>
 
@@ -32,7 +30,6 @@
                 });
 
                 socket.on('message', function (msg) {
-                    console.log(msg)
                     if (msg.from === "me") {
                         $('#messages').append($('<li style="color:red" class="me">').text(msg.data));
                     } else if (msg.from === "bot") {
