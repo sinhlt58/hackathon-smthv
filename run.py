@@ -14,8 +14,13 @@ def hello_world():
 def handleMessage(msg):
     text = msg["data"]
     send({"from": "me", "data": text})
-    blob = TextBlob(u'{}'.format(text))
-    send({"from": "bot", "data": str(blob.translate(to="vi"))})
+    text_translate = text
+    try:
+        blob = TextBlob(u'{}'.format(text))
+        text_translate = str(blob.translate(to="vi"))
+    except:
+        print("An exception occurred")
+    send({"from": "bot", "data": text_translate})
 
 if __name__ == '__main__':
     socketio.run(app)
