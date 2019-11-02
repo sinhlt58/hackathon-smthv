@@ -9,7 +9,7 @@ itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
 monotonic==1.5
-nltk==3.4.3
+nltk==3.4.5
 python-engineio==3.8.1
 python-socketio==4.1.0
 six==1.12.0
